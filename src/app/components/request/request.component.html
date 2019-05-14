@@ -1,0 +1,5 @@
+<div *ngIf="!imgURL" class="dropzone" (dragover)=false (dragend)=false (drop)="handleDrop($event)">
+  <p style="margin: 10px; text-align: center"> <strong>Drop Your Images Here</strong></p>
+</div>
+<img [src]="imgURL" height="200" *ngIf="imgURL">
+
