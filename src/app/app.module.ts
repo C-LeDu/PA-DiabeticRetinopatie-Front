@@ -11,8 +11,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {SignUpComponent} from './components/sign-up/sign-up.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import {RequestComponent} from './components/request/request.component';
 
 const appRoutes: Routes = [
+  { path: 'request', component: RequestComponent },
   { path: 'signIn', component: SignInComponent },
   { path: 'signUp', component: SignUpComponent },
   { path: '**', component: PageNotFoundComponent }
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     SignInComponent,
     SignUpComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    RequestComponent
   ],
   imports: [
     BrowserModule,
