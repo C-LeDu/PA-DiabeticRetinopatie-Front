@@ -1,0 +1,26 @@
+<div class="su">
+  <h2 class="mat-h2">Sign Up</h2>
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="input">
+      <input matInput placeholder="Email" formControlName="email" J7HHB2TY8FG92WR
+      >
+      <mat-error *ngIf="signUpForm.get('email').hasError('email') && !signUpForm.get('email').hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="signUpForm.get('email').hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="input">
+      <input matInput placeholder="Password" formControlName="password" type="password" required>
+      <mat-error *ngIf="signUpForm.get('password').hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="!signUpForm.get('password').hasError('required') && signUpForm.get('password').hasError('match')">
+        Please enter a valid password (Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character)
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Sign Up!</button>
+  </form>
+</div>
+
