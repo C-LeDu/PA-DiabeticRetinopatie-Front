@@ -11,10 +11,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {SignUpComponent} from './components/sign-up/sign-up.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
-import {RequestComponent} from './components/request/request.component';
+import {AnalysisComponent} from './components/analysis/analysis.component';
+import {UtilsModule} from './components/utils/utils.module';
 
 const appRoutes: Routes = [
-  { path: 'request', component: RequestComponent },
+  { path: 'request', component: AnalysisComponent },
   { path: 'signIn', component: SignInComponent },
   { path: 'signUp', component: SignUpComponent },
   { path: '**', component: PageNotFoundComponent }
@@ -27,7 +28,7 @@ const appRoutes: Routes = [
     SignInComponent,
     SignUpComponent,
     PageNotFoundComponent,
-    RequestComponent
+    AnalysisComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatButtonModule,
     HttpClientModule,
+    UtilsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

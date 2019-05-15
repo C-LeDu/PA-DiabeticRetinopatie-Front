@@ -1,0 +1,10 @@
+<div *ngIf="!imgURL" class="dropzone" (dragover)=false (dragend)=false (drop)="handleDrop($event)">
+  <p>Drop Your Image Here <button mat-raised-button color="primary" (click)="openInput()">... or Choose a File</button></p>
+  <input id="fileInput" hidden type="file" (change)="inputUpload($event)" >
+</div>
+<div class="imgContainer"*ngIf="imgURL">
+  <img [src]="imgURL">
+  <button mat-mini-fab class="suppButton" color="warn" (click)="deleteFile()">X</button>
+</div>
+
+

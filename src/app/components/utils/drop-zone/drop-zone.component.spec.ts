@@ -1,20 +1,20 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {RequestComponent} from './request.component';
+import {DropZoneComponent} from './drop-zone.component';
 
-describe('RequestComponent', () => {
-  let component: RequestComponent;
-  let fixture: ComponentFixture<RequestComponent>;
+describe('DropZoneComponent', () => {
+  let component: DropZoneComponent;
+  let fixture: ComponentFixture<DropZoneComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RequestComponent ]
+      declarations: [ DropZoneComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RequestComponent);
+    fixture = TestBed.createComponent(DropZoneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

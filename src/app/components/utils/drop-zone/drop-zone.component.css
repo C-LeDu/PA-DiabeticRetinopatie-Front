@@ -1,0 +1,36 @@
+.dropzone {
+  background-color: #f4f4f4;
+  min-height: 150px;
+  border: 5px dashed #e7e7e7;
+  text-align: center;
+  height: 250px;
+  font:600 17px/20px Roboto,"Helvetica Neue",sans-serif;
+}
+
+.dropzone:hover {
+  border: 5px  dashed #dddddd;
+  background-color: #e7e7e7;
+}
+
+p {
+  position: relative;
+  top: 40%;
+}
+
+.imgContainer {
+  height: 250px;
+  width: 250px;
+  display:inline-block;
+  position:relative;
+}
+
+.imgContainer img {
+  height: inherit;
+  position: absolute;
+}
+
+.imgContainer button {
+  left: 0.5em;
+  top: 0.5em;
+  position: relative;
+}
