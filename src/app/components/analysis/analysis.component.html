@@ -1,6 +1,10 @@
-<div *ngIf="!analyzeDone">
+<div *ngIf="!analyzeDone && !loading">
   <app-drop-zone [(file)]="file1"></app-drop-zone>
   <app-drop-zone [(file)]="file2"></app-drop-zone>
-  <button mat-raised-button>Begin Analysis</button>
+  <button mat-raised-button (click)="requestAnalyze()">Begin Analysis</button>
+</div>
+<div *ngIf="loading">LOADING!</div>
+<div *ngIf="analyzeDone && !loading">
+  Well done you're fucked
 </div>
 
