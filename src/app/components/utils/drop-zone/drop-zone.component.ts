@@ -23,7 +23,6 @@ export class DropZoneComponent implements OnInit {
   }
 
   openInput() {
-    // your can use ElementRef for this later
     document.getElementById('fileInput').click();
   }
 
@@ -36,7 +35,7 @@ export class DropZoneComponent implements OnInit {
   deleteFile() {
     this.file = undefined;
     this.imgURL = undefined;
-    this.fileChange.emit(this.fileChange);
+    this.fileChange.emit(this.file);
   }
 
   private displayImage() {

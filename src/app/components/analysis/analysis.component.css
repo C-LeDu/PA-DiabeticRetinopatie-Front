@@ -1,0 +1,29 @@
+.files {
+  display: table;
+  width: 100%;
+}
+
+.files app-drop-zone {
+  display: table-cell;
+  width: 45%;
+  padding: 1em;
+}
+
+.before {
+  top: 30%;
+  position: absolute;
+  width: 99%;
+}
+
+.analyze-button {
+  width: 90%;
+  margin-left: 5%;
+  height: 4.6em;
+  font-family:Roboto,"Helvetica Neue",sans-serif;font-size:14px;font-weight:500;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 48%;
+}

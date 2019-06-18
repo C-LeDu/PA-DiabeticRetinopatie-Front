@@ -1,10 +1,14 @@
-<div *ngIf="!analyzeDone && !loading">
-  <app-drop-zone [(file)]="file1"></app-drop-zone>
-  <app-drop-zone [(file)]="file2"></app-drop-zone>
-  <button mat-raised-button (click)="requestAnalyze()">Begin Analysis</button>
+<div class="before" *ngIf="!analyzeDone && !loading">
+  <div class="files">
+    <app-drop-zone [(file)]="file1"></app-drop-zone>
+    <app-drop-zone [(file)]="file2"></app-drop-zone>
+  </div>
+  <button class="analyze-button" mat-raised-button [disabled]="file1 == null && file2 == null" (click)="requestAnalyze()">Begin Analysis</button>
 </div>
-<div *ngIf="loading">LOADING!</div>
+<div *ngIf="loading">
+  <mat-spinner class="loading"></mat-spinner>
+</div>
 <div *ngIf="analyzeDone && !loading">
-  Well done you're fucked
+  <img [src]="imageToShow" alt="Left eye">
 </div>
 

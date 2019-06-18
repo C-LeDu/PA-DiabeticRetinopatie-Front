@@ -6,7 +6,7 @@ import {HeaderComponent} from './components/header/header.component';
 import {SignInComponent} from './components/sign-in/sign-in.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
-import {MatButtonModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatInputModule, MatProgressSpinnerModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {SignUpComponent} from './components/sign-up/sign-up.component';
@@ -16,8 +16,8 @@ import {UtilsModule} from './components/utils/utils.module';
 
 const appRoutes: Routes = [
   { path: 'request', component: AnalysisComponent },
-  { path: 'signIn', component: SignInComponent },
-  { path: 'signUp', component: SignUpComponent },
+  // { path: 'signIn', component: SignInComponent },
+  // { path: 'signUp', component: SignUpComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -43,8 +43,9 @@ const appRoutes: Routes = [
     UtilsModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+      {enableTracing: true} // <-- debugging purposes only
+    ),
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
