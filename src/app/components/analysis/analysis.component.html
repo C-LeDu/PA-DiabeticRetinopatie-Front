@@ -9,6 +9,10 @@
   <mat-spinner class="loading"></mat-spinner>
 </div>
 <div *ngIf="analyzeDone && !loading">
-  <img [src]="imageToShow" alt="Left eye">
+  <div class="files">
+    <img [src]="imageToShow1" alt="Left eye">
+    <img [src]="imageToShow2" alt="Right eye">
+  </div>
+  <button class="analyze-button" mat-raised-button (click)="restartAnalyze()">Start New Analysis</button>
 </div>
 
