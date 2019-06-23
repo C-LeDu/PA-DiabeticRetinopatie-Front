@@ -9,8 +9,20 @@
   padding: 1em;
 }
 
+.files app-result-display {
+  display: table-cell;
+  width: 45%;
+  padding: 1em;
+}
+
 .before {
   top: 30%;
+  position: absolute;
+  width: 99%;
+}
+
+.after {
+  top: 28%;
   position: absolute;
   width: 99%;
 }

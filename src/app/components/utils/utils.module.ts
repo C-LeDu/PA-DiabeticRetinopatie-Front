@@ -15,6 +15,7 @@ import {ResultDisplayComponent} from './result-display/result-display.component'
   ],
   exports: [
     DropZoneComponent,
+    ResultDisplayComponent,
   ]
 })
 export class UtilsModule { }

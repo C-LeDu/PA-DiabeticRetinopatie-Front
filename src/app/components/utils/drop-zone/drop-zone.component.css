@@ -3,7 +3,7 @@
   min-height: 150px;
   border: 5px dashed #e7e7e7;
   text-align: center;
-  height: 250px;
+  height: 256px;
   font:600 17px/20px Roboto,"Helvetica Neue",sans-serif;
 }
 
@@ -18,8 +18,8 @@ p {
 }
 
 .imgContainer {
-  height: 250px;
-  width: 250px;
+  height: 256px;
+  width: 256px;
   display:inline-block;
   position:relative;
 }

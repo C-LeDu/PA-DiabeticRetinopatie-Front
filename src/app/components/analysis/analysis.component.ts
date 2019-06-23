@@ -7,14 +7,26 @@ import {AnalysisService} from '../../services/analysis.service';
   styleUrls: ['./analysis.component.css']
 })
 export class AnalysisComponent implements OnInit {
+
+  constructor( private analysisService: AnalysisService) { }
   file1: File;
   file2: File;
   analyzeDone = false;
   loading = false;
-  imageToShow1: string | ArrayBuffer;
-  imageToShow2: string | ArrayBuffer;
+  leftImageToShow: string | ArrayBuffer;
+  rightImageToShow: string | ArrayBuffer;
+  leftLevelToShow: string;
+  rightLevelToShow: string;
+  leftValuesToShow: string[];
+  rightValuesToShow: string[];
 
-  constructor( private analysisService: AnalysisService) { }
+  static getValuesFromHeader(header: string): string[] {
+    return header.split('=')[1].replace('.jpeg', '').split('_')[1].split('-');
+  }
+
+  static getCatFromHeader(header: string): string {
+    return header.split('=')[1].replace('.jpeg', '').split('_')[0];
+  }
 
   ngOnInit() {
   }
@@ -25,11 +37,13 @@ export class AnalysisComponent implements OnInit {
     if (this.file1 != null) {
       this.analysisService.getResult(this.file1)
         .subscribe(x => {
-          console.log(x.headers);
+          // attachment; filename=3.jpeg
+          this.leftLevelToShow = AnalysisComponent.getCatFromHeader(x.headers.get('content-disposition'));
+          this.leftValuesToShow = AnalysisComponent.getValuesFromHeader(x.headers.get('content-disposition'));
           const newBlob = new Blob([x.body], { type: 'image/jpeg' });
           const reader = new FileReader();
           reader.onloadend = () => {
-            this.imageToShow1 = reader.result;
+            this.leftImageToShow = reader.result;
           };
           reader.readAsDataURL(newBlob);
           this.loading = false;
@@ -39,11 +53,12 @@ export class AnalysisComponent implements OnInit {
     if (this.file2 != null) {
       this.analysisService.getResult(this.file2)
         .subscribe(x => {
-          console.log(x.headers);
+          this.rightLevelToShow = AnalysisComponent.getCatFromHeader(x.headers.get('content-disposition'));
+          this.rightValuesToShow = AnalysisComponent.getValuesFromHeader(x.headers.get('content-disposition'));
           const newBlob = new Blob([x.body], { type: 'image/jpeg' });
           const reader = new FileReader();
           reader.onloadend = () => {
-            this.imageToShow2 = reader.result;
+            this.rightImageToShow = reader.result;
           };
           reader.readAsDataURL(newBlob);
           this.loading = false;
@@ -57,8 +72,10 @@ export class AnalysisComponent implements OnInit {
     this.analyzeDone = false;
     this.file1 = undefined;
     this.file2 = undefined;
-    this.imageToShow1 = undefined;
-    this.imageToShow2 = undefined;
+    this.leftImageToShow = undefined;
+    this.rightImageToShow = undefined;
+    this.leftLevelToShow = undefined;
+    this.rightLevelToShow = undefined;
     this.loading = false;
   }
 }

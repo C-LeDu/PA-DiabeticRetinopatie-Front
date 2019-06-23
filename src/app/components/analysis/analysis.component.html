@@ -8,10 +8,10 @@
 <div *ngIf="loading">
   <mat-spinner class="loading"></mat-spinner>
 </div>
-<div *ngIf="analyzeDone && !loading">
+<div class="after" *ngIf="analyzeDone && !loading">
   <div class="files">
-    <img [src]="imageToShow1" alt="Left eye">
-    <img [src]="imageToShow2" alt="Right eye">
+    <app-result-display *ngIf="leftImageToShow != null" [imageToShow]="leftImageToShow" [levelToShow]="leftLevelToShow" [valuesToShow]="leftValuesToShow"></app-result-display>
+    <app-result-display *ngIf="rightImageToShow != null" [imageToShow]="rightImageToShow" [levelToShow]="rightLevelToShow" [valuesToShow]="rightValuesToShow"></app-result-display>
   </div>
   <button class="analyze-button" mat-raised-button (click)="restartAnalyze()">Start New Analysis</button>
 </div>
