@@ -2,10 +2,10 @@
   <table>
     <tr>
       <td rowspan="2" class="cell">
-        <img [src]="imageToShow" alt="No Image to Show">
+        <img class="baseImage" [src]="heatImageToShow" alt="No Image to Show">
       </td>
       <td class="cell">
-        <div class="circleBase" [ngStyle]="{'background': getBackgroundColor(), 'color': getColor()}">{{levelToShow}}</div>
+        <img class="heatImage" [src]="heatImageToShow" alt="No Image to Show">
       </td>
     </tr>
     <tr>
@@ -15,7 +15,8 @@
             <td *ngFor="let h of headers">{{h}}</td>
           </tr>
           <tr>
-            <td *ngFor="let val of valuesToShow">{{val}}</td>
+            <td [ngStyle]="getStyle('0')">{{valuesToShow[0]}}</td>
+            <td [ngStyle]="getStyle('1')">{{valuesToShow[1]}}</td>
           </tr>
         </table>
       </td>

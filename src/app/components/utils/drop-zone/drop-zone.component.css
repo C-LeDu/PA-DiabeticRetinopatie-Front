@@ -25,7 +25,8 @@ p {
 }
 
 .imgContainer img {
-  height: inherit;
+  height: 256px;
+  width: 256px;
   position: absolute;
 }
 

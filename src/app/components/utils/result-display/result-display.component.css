@@ -1,6 +1,13 @@
-img {
-  height: 256px;
-  width: 256px;
+.baseImage {
+  height: 400px;
+  width: 400px;
+  display:inline-block;
+  position:relative;
+}
+
+.heatImage {
+  height: 250px;
+  width: 250px;
   display:inline-block;
   position:relative;
 }
@@ -53,9 +60,10 @@ table {
 }
 
 .content {
-  width: 95%;
+  width: 100%;
   margin-bottom: 10px;
   border: dashed 2px #00000030;
   background: #f0f0f030;
+  min-width: 750px
 }
 
