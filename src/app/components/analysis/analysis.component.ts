@@ -11,6 +11,8 @@ export class AnalysisComponent implements OnInit {
   constructor( private analysisService: AnalysisService) { }
   file1: File;
   file2: File;
+  imgURL1: any;
+  imgURL2: any;
   analyzeDone = false;
   loading = false;
   leftImageToShow: string | ArrayBuffer;
@@ -72,6 +74,8 @@ export class AnalysisComponent implements OnInit {
     this.analyzeDone = false;
     this.file1 = undefined;
     this.file2 = undefined;
+    this.imgURL1 = undefined;
+    this.imgURL2 = undefined;
     this.leftImageToShow = undefined;
     this.rightImageToShow = undefined;
     this.leftLevelToShow = undefined;

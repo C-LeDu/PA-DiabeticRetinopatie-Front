@@ -6,9 +6,10 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./drop-zone.component.css']
 })
 export class DropZoneComponent implements OnInit {
-  imgURL: any;
+  @Input() imgURL: any;
   @Input() file: File;
   @Output() fileChange = new EventEmitter();
+  @Output() imgURLChange = new EventEmitter();
 
   constructor() { }
 
@@ -36,6 +37,7 @@ export class DropZoneComponent implements OnInit {
     this.file = undefined;
     this.imgURL = undefined;
     this.fileChange.emit(this.file);
+    this.imgURLChange.emit(this.imgURL);
   }
 
   private displayImage() {
@@ -43,6 +45,7 @@ export class DropZoneComponent implements OnInit {
     reader.readAsDataURL(this.file);
     reader.onload = (event) => {
       this.imgURL = reader.result;
+      this.imgURLChange.emit(this.imgURL);
     };
   }
 }

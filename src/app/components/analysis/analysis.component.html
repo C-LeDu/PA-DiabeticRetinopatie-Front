@@ -1,7 +1,7 @@
 <div class="before" *ngIf="!analyzeDone && !loading">
   <div class="files">
-    <app-drop-zone [(file)]="file1"></app-drop-zone>
-    <app-drop-zone [(file)]="file2"></app-drop-zone>
+    <app-drop-zone [(file)]="file1" [(imgURL)]="imgURL1"></app-drop-zone>
+    <app-drop-zone [(file)]="file2" [(imgURL)]="imgURL2"></app-drop-zone>
   </div>
   <button class="analyze-button" mat-raised-button [disabled]="file1 == null && file2 == null" (click)="requestAnalyze()">Begin Analysis</button>
 </div>
@@ -10,8 +10,8 @@
 </div>
 <div class="after" *ngIf="analyzeDone && !loading">
   <div class="files">
-    <app-result-display *ngIf="leftImageToShow != null" [baseImageToShow]="file1" [heatImageToShow]="leftImageToShow" [levelToShow]="leftLevelToShow" [valuesToShow]="leftValuesToShow"></app-result-display>
-    <app-result-display *ngIf="rightImageToShow != null" [baseImageToShow]="file2" [heatImageToShow]="rightImageToShow" [levelToShow]="rightLevelToShow" [valuesToShow]="rightValuesToShow"></app-result-display>
+    <app-result-display *ngIf="leftImageToShow != null" [baseImageToShow]="imgURL1" [heatImageToShow]="leftImageToShow" [levelToShow]="leftLevelToShow" [valuesToShow]="leftValuesToShow"></app-result-display>
+    <app-result-display *ngIf="rightImageToShow != null" [baseImageToShow]="imgURL2" [heatImageToShow]="rightImageToShow" [levelToShow]="rightLevelToShow" [valuesToShow]="rightValuesToShow"></app-result-display>
   </div>
   <button class="analyze-button" mat-raised-button (click)="restartAnalyze()">Start New Analysis</button>
 </div>
